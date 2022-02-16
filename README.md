@@ -1,3 +1,3 @@
 # EcommerceTemplate
 
-link do figma de base: https://dribbble.com/shots/14386743-Ecommerce-Concept-Design
+link do figma de base: https://www.figmacrush.com/free-figma-ecommerce-app-template/
