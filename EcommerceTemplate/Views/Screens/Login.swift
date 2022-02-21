@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Login: View {
+    @EnvironmentObject var navigation: Navigation
+    
     var body: some View {
         ZStack {
             Color("Primary").ignoresSafeArea()
@@ -30,17 +32,21 @@ struct Login: View {
                     TextMedium("Forgot your password?").padding(.bottom, 48)
                 }
                 
+                
+                
                 Button {
-                    print("press sign up")
+                    navigation.navigate(to: "SignUp")
                 } label: {
                     HStack(spacing: 0) {
                         TextMedium("Don't you have an account?")
                         TextMedium(" Sign up", bold: true)
                     }
-
                 }
             }
         }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 

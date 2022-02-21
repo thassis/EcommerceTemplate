@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Splash: View {
+    @EnvironmentObject var navigation: Navigation
+
     var body: some View {
         ZStack {
             Color("Primary").ignoresSafeArea()
@@ -15,10 +17,14 @@ struct Splash: View {
                 Image("SplashImage")
                     .resizable()
                     .frame(width: 126, height: 126)
-                TextLarge("Tradly")
+                TextLarge("Tradly").onTapGesture {
+                    navigation.navigate(to: "Login")
+                }
             }
         }
-        
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 

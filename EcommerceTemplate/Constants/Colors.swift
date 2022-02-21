@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct Colors {
+    let primary = Color("Primary")
+}
