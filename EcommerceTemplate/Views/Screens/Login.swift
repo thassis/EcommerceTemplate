@@ -7,9 +7,7 @@
 
 import SwiftUI
 
-struct Login: View {
-    @EnvironmentObject var navigation: Navigation
-    
+struct Login: View {    
     var body: some View {
         ZStack {
             Color("Primary").ignoresSafeArea()
@@ -23,8 +21,10 @@ struct Login: View {
                 TextInput(placeholder: "Email/Mobile Number").padding(.bottom, 8)
                 TextInput(placeholder: "Password").padding(.bottom, 36)
                 
-                FilledButton("Login", buttonStyle: FilledButton.Style.white)
-                    .padding(.bottom, 32)
+                NavigationLink(destination: TabViews()) {
+                    FilledButton("Login", buttonStyle: FilledButton.Style.white)
+                        .padding(.bottom, 32)
+                }
                 
                 Button {
                     print("press forgot your password")
@@ -32,11 +32,7 @@ struct Login: View {
                     TextMedium("Forgot your password?").padding(.bottom, 48)
                 }
                 
-                
-                
-                Button {
-                    navigation.navigate(to: "SignUp")
-                } label: {
+                NavigationLink(destination: SignUp()) {
                     HStack(spacing: 0) {
                         TextMedium("Don't you have an account?")
                         TextMedium(" Sign up", bold: true)

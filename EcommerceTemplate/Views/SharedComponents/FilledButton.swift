@@ -17,24 +17,20 @@ struct FilledButton: View {
     }
     
     var body: some View {
-        Button {
-            print("Button \(title) tapped!")
-        } label: {
-            TextMedium(title, bold: true, textColor: buttonStyle.textColor)
-                .padding(.vertical, 16)
-                .padding(.horizontal, 32)
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .background(buttonStyle.fillColor)
-                .cornerRadius(24)
-                .padding(.horizontal, 32)
-        }
+        TextMedium(title, bold: true, textColor: buttonStyle.textColor)
+            .padding(.vertical, 16)
+            .padding(.horizontal, 32)
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .background(buttonStyle.fillColor)
+            .cornerRadius(24)
+            .padding(.horizontal, 32)
     }
     
     struct ButtonStyle {
         let fillColor: Color
         let textColor: Color
     }
-
+    
     enum Style {
         static var white: ButtonStyle {
             ButtonStyle(fillColor: .white, textColor: Color("Primary"))

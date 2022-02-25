@@ -8,24 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var navigation = Navigation()
-//    @State private var selection: String? = navigation.screen
     var body: some View {
-        VStack{
-            Header(title: navigation.screen ?? "")
-            NavigationView {
-                VStack{
-                    NavigationLink(destination: Login(), tag: "Login", selection: $navigation.screen) { EmptyView() }
-                    NavigationLink(destination: SignUp(), tag: "SignUp", selection: $navigation.screen) { EmptyView() }
-                    Splash()
-                }
-                .navigationBarTitle("")
-                .navigationBarHidden(true)
-                .navigationBarBackButtonHidden(true)
-            }
-            .environmentObject(navigation)
-
-        }
+        TabViews()
+//        NavigationView {
+//            Splash()
+//                .navigationBarTitle("")
+//                .navigationBarHidden(true)
+//                .navigationBarBackButtonHidden(true)
+//        }
     }
 }
 
