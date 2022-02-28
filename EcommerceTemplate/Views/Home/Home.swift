@@ -16,8 +16,8 @@ struct Home: View {
                 .background(Color("Primary"))
             
             ScrollView {
-                CategoriesList().padding(.top, 16)
                 Carousel()
+                CategoriesList()
             }.background(Color("Background"))
             
             Spacer()

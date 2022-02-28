@@ -20,14 +20,14 @@ struct Carousel: View {
     let items: [Item] = roles.map { Item(image: Image($0)) }
     
     var body: some View {
-        ACarousel(items) { item in
+        ACarousel(items, autoScroll: .active(5)) { item in
             item.image
                 .resizable()
                 .scaledToFill()
-                .frame(height: 300)
-                .cornerRadius(30)
+                .frame(height: 165)
+                .cornerRadius(8)
         }
-        .frame(height: 300)
+        .frame(height: 192)
     }
 }
 

@@ -10,12 +10,12 @@ import SwiftUI
 struct CategoriesList: View {
     private let categories = ["beverages", "breads", "eggs", "frozen", "fruit", "homecare", "petcare", "vegs"]
     
-    private var fourColumnGrid = [GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)]
+    private var fourColumnGrid = [GridItem(.flexible(), spacing: 1), GridItem(.flexible(), spacing: 1), GridItem(.flexible(), spacing: 1), GridItem(.flexible(), spacing: 1)]
 
     let widthScreen = UIScreen.main.bounds.size.width
         
     var body: some View {
-        LazyVGrid(columns: fourColumnGrid, spacing: 0) {
+        LazyVGrid(columns: fourColumnGrid, spacing: 1) {
             ForEach(categories.indices) {cat in
                 Category(name: self.categories[cat])
             }
