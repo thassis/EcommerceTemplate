@@ -1,0 +1,58 @@
+[
+    {
+        name: "Chocolate",
+        image: "product_chocolate",
+        price: 15,
+        discount_price: 0,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lorem ex, eleifend fringilla blandit non, mollis ut tortor. Integer quis laoreet nisl. Nam eget dignissim metus, gravida tempor nunc. Ut et leo nec risus sodales condimentum id at tortor. Phasellus placerat commodo sapien. Praesent malesuada porta turpis, ac posuere orci posuere porttitor. Phasellus cursus, risus a pharetra gravida, nisl nisi eleifend urna, facilisis vestibulum quam mi a quam. Integer accumsan vel massa sit amet feugiat. Etiam nec aliquam est. Donec tellus tortor, tempor sed varius tincidunt, molestie sit amet ex.",
+        category: "Beverages"
+    },
+    {
+        name: "Chocolate",
+        image: "product_chocolate",
+        price: 15,
+        discount_price: 0,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lorem ex, eleifend fringilla blandit non, mollis ut tortor. Integer quis laoreet nisl. Nam eget dignissim metus, gravida tempor nunc. Ut et leo nec risus sodales condimentum id at tortor. Phasellus placerat commodo sapien. Praesent malesuada porta turpis, ac posuere orci posuere porttitor. Phasellus cursus, risus a pharetra gravida, nisl nisi eleifend urna, facilisis vestibulum quam mi a quam. Integer accumsan vel massa sit amet feugiat. Etiam nec aliquam est. Donec tellus tortor, tempor sed varius tincidunt, molestie sit amet ex.",
+        category: "Beverages"
+    },
+    {
+        name: "Chocolate",
+        image: "product_chocolate",
+        price: 15,
+        discount_price: 0,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lorem ex, eleifend fringilla blandit non, mollis ut tortor. Integer quis laoreet nisl. Nam eget dignissim metus, gravida tempor nunc. Ut et leo nec risus sodales condimentum id at tortor. Phasellus placerat commodo sapien. Praesent malesuada porta turpis, ac posuere orci posuere porttitor. Phasellus cursus, risus a pharetra gravida, nisl nisi eleifend urna, facilisis vestibulum quam mi a quam. Integer accumsan vel massa sit amet feugiat. Etiam nec aliquam est. Donec tellus tortor, tempor sed varius tincidunt, molestie sit amet ex.",
+        category: "Beverages"
+    },
+    {
+        name: "Chocolate",
+        image: "product_chocolate",
+        price: 15,
+        discount_price: 0,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lorem ex, eleifend fringilla blandit non, mollis ut tortor. Integer quis laoreet nisl. Nam eget dignissim metus, gravida tempor nunc. Ut et leo nec risus sodales condimentum id at tortor. Phasellus placerat commodo sapien. Praesent malesuada porta turpis, ac posuere orci posuere porttitor. Phasellus cursus, risus a pharetra gravida, nisl nisi eleifend urna, facilisis vestibulum quam mi a quam. Integer accumsan vel massa sit amet feugiat. Etiam nec aliquam est. Donec tellus tortor, tempor sed varius tincidunt, molestie sit amet ex.",
+        category: "Beverages"
+    },
+    {
+        name: "Chocolate",
+        image: "product_chocolate",
+        price: 15,
+        discount_price: 0,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lorem ex, eleifend fringilla blandit non, mollis ut tortor. Integer quis laoreet nisl. Nam eget dignissim metus, gravida tempor nunc. Ut et leo nec risus sodales condimentum id at tortor. Phasellus placerat commodo sapien. Praesent malesuada porta turpis, ac posuere orci posuere porttitor. Phasellus cursus, risus a pharetra gravida, nisl nisi eleifend urna, facilisis vestibulum quam mi a quam. Integer accumsan vel massa sit amet feugiat. Etiam nec aliquam est. Donec tellus tortor, tempor sed varius tincidunt, molestie sit amet ex.",
+        category: "Beverages"
+    },
+    {
+        name: "Chocolate",
+        image: "product_chocolate",
+        price: 15,
+        discount_price: 0,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lorem ex, eleifend fringilla blandit non, mollis ut tortor. Integer quis laoreet nisl. Nam eget dignissim metus, gravida tempor nunc. Ut et leo nec risus sodales condimentum id at tortor. Phasellus placerat commodo sapien. Praesent malesuada porta turpis, ac posuere orci posuere porttitor. Phasellus cursus, risus a pharetra gravida, nisl nisi eleifend urna, facilisis vestibulum quam mi a quam. Integer accumsan vel massa sit amet feugiat. Etiam nec aliquam est. Donec tellus tortor, tempor sed varius tincidunt, molestie sit amet ex.",
+        category: "Beverages"
+    },
+    {
+        name: "Chocolate",
+        image: "product_chocolate",
+        price: 15,
+        discount_price: 0,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lorem ex, eleifend fringilla blandit non, mollis ut tortor. Integer quis laoreet nisl. Nam eget dignissim metus, gravida tempor nunc. Ut et leo nec risus sodales condimentum id at tortor. Phasellus placerat commodo sapien. Praesent malesuada porta turpis, ac posuere orci posuere porttitor. Phasellus cursus, risus a pharetra gravida, nisl nisi eleifend urna, facilisis vestibulum quam mi a quam. Integer accumsan vel massa sit amet feugiat. Etiam nec aliquam est. Donec tellus tortor, tempor sed varius tincidunt, molestie sit amet ex.",
+        category: "Beverages"
+    },
+]

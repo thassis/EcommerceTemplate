@@ -8,16 +8,23 @@
 import SwiftUI
 
 struct TextSmall: View {
-    let text: String
+    var text: String
+    var bold: Bool
+    var textColor: Color
     
-    init(_ text: String){
+    init(_ text: String, bold: Bool = false, textColor: Color = Color.white){
         self.text = text
+        self.bold = bold
+        self.textColor = textColor
     }
+
     
     var body: some View {
-        Text(text)
+        let textView = Text(text)
             .font(Font.custom("Montserrat", size: 16))
-            .foregroundColor(Color.white)
+            .foregroundColor(textColor)
+        if(bold){ textView.fontWeight(.bold) }
+        else { textView }
     }
 }
 
@@ -25,7 +32,10 @@ struct TextSmall_Previews: PreviewProvider {
     static var previews: some View {
         ZStack{
             Color("Primary").ignoresSafeArea()
-            TextSmall("Text")
+            VStack{
+                TextMedium("This is bold", bold: true)
+                TextMedium("This is not bold", bold: false)
+            }
         }
     }
 }

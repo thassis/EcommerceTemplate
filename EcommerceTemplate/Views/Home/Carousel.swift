@@ -13,10 +13,10 @@ struct Item: Identifiable {
     let image: Image
 }
 
-let roles = ["beverages", "breads", "eggs", "frozen", "fruit", "homecare", "petcare", "vegs"]
+let roles = ["banner", "banner", "banner", "banner", "banner", "banner", "banner", "banner"]
+let bannerWidth = UIScreen.main.bounds.width*0.9
 
 struct Carousel: View {
-    
     let items: [Item] = roles.map { Item(image: Image($0)) }
     
     var body: some View {
@@ -24,10 +24,10 @@ struct Carousel: View {
             item.image
                 .resizable()
                 .scaledToFill()
-                .frame(height: 165)
+                .frame(width: bannerWidth, height: 165)
                 .cornerRadius(8)
-        }
-        .frame(height: 192)
+        }.frame(height: 165)
+        
     }
 }
 

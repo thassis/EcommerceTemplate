@@ -43,10 +43,12 @@ struct FilledButton: View {
 
 struct FilledButton_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack{
-            Color("Primary").ignoresSafeArea()
-            FilledButton("Filled White", buttonStyle: FilledButton.Style.white)
+        VStack{
+            FilledButton("Filled Primary")
+            ZStack{
+                Color("Primary").ignoresSafeArea()
+                FilledButton("Filled White", buttonStyle: FilledButton.Style.white)
+            }
         }
-        FilledButton("Filled Primary")
     }
 }

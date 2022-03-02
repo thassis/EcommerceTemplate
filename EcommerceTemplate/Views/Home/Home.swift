@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct Home: View {
+    @ObservedObject var productsViewModel = ProductsViewModel()
+    
+    init(){
+        productsViewModel.getNewProducts()
+    }
+    
     var body: some View {
         VStack(spacing: 0){
             Header(title: "Groceries")
@@ -15,11 +21,19 @@ struct Home: View {
                 .padding(.bottom, 16)
                 .background(Color("Primary"))
             
-            ScrollView {
-                Carousel()
-                CategoriesList()
-            }.background(Color("Background"))
-            
+            ScrollView() {
+                VStack(spacing: 0) {
+                    CategoriesList()
+                        .padding()
+                    
+                    ProductsList()
+                        .padding(16)
+                    ProductsList()
+                        .padding(16)
+                    
+                    StoreList().padding(.top, 16)
+                }
+            }.background(Color("background"))
             Spacer()
         }   
     }
