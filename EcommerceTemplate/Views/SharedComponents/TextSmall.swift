@@ -33,8 +33,8 @@ struct TextSmall_Previews: PreviewProvider {
         ZStack{
             Color("Primary").ignoresSafeArea()
             VStack{
-                TextMedium("This is bold", bold: true)
-                TextMedium("This is not bold", bold: false)
+                TextSmall("This is bold", bold: true)
+                TextSmall("This is not bold", bold: false)
             }
         }
     }

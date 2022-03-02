@@ -6,26 +6,39 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct CardProduct: View {
+    let product: ProductInfo
+    
+    init(_ product: ProductInfo){
+        self.product = product
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
-            Image("breads")
-                .resizable()
-                .frame(width: UIScreen.screenWidth*0.4, height: UIScreen.screenHeight*0.15)
-
+            AsyncImage(url: URL(string: product.imageURL)) { image in
+                image
+                    .resizable()
+                    .frame(width: UIScreen.screenWidth*0.4, height: UIScreen.screenHeight*0.15)
+            } placeholder: {
+                Color.gray
+            }
+            .frame(width: UIScreen.screenWidth*0.4, height: UIScreen.screenHeight*0.15)
+            
             VStack(alignment: .leading, spacing: 0){
-                TextSmall("Fish", bold: true, textColor: Color("Black")).padding(12)
-                HStack{
+                TextSmall(product.name, bold: true, textColor: Color("Black")).padding(12)
+                HStack(spacing: 0){
                     TextSmall("T")
                         .padding(5)
                         .background(
                             Circle().foregroundColor(Color("Primary"))
                         )
                         .padding(.leading, 12)
+                        .padding(.trailing, 4)
                     TextSmall("Tradly", textColor: Color("Grey"))
                     Spacer()
-                    TextSmall("$25", textColor: Color("Primary"))
+                    TextSmall("$ \(product.price)", textColor: Color("Primary"))
                         .padding(.trailing, 12)
                 }
                 .padding(.bottom, 12)
@@ -44,7 +57,7 @@ struct CardProduct: View {
 struct CardProduct_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            CardProduct()
+            CardProduct(ProductInfo(name: "teste", price: 15, discountPrice: 5, description: "teste", imageURL: ""))
         }
     }
 }

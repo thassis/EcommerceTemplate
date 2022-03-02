@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct ProductsList: View {
+    let productList: Array<ProductInfo>
+    
+    init(_ productList: Array<ProductInfo>){
+        self.productList = productList
+    }
     
     var body: some View {
         VStack(alignment: .leading){
@@ -24,11 +29,9 @@ struct ProductsList: View {
             }
             ScrollView(.horizontal){
                 HStack(spacing: 10) {
-                    CardProduct()
-                    CardProduct()
-                    CardProduct()
-                    CardProduct()
-                    CardProduct()
+                    ForEach(productList) { product in
+                        CardProduct(product)
+                    }
                 }
             }
         }
@@ -39,7 +42,7 @@ struct ProductsList_Previews: PreviewProvider {
     static var previews: some View {
         ZStack{
             Color("background")
-            ProductsList()
+            ProductsList([ProductInfo(name: "teste", price: 15, discountPrice: 5, description: "teste", imageURL: "")])
         }
     }
 }

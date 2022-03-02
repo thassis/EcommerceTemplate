@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct Home: View {
-    @ObservedObject var productsViewModel = ProductsViewModel()
+    @ObservedObject var productsViewModel: ProductsViewModel
     
     init(){
+        productsViewModel = ProductsViewModel()
         productsViewModel.getNewProducts()
+    }
+    
+    var productsList: Array<ProductInfo> {
+        productsViewModel.products.list
     }
     
     var body: some View {
@@ -26,9 +31,9 @@ struct Home: View {
                     CategoriesList()
                         .padding()
                     
-                    ProductsList()
+                    ProductsList(productsList)
                         .padding(16)
-                    ProductsList()
+                    ProductsList(productsList)
                         .padding(16)
                     
                     StoreList().padding(.top, 16)

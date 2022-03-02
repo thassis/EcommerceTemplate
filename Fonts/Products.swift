@@ -10,8 +10,12 @@ import Foundation
 struct Products {
     private(set) var list: Array<ProductInfo>
     
-    init(_ list: Array<ProductInfo>){
+    init(_ list: Array<ProductInfo> = []){
         self.list = list;
+    }
+    
+    mutating func addProduct(_ product: ProductInfo){
+        self.list.append(product)
     }
 }
 

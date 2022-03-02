@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct ProductInfo {
+struct ProductInfo: Identifiable {
+    let id = UUID()
     let name: String
     let price: Float
     let discountPrice: Float
     let description: String
+    let imageURL: String
 }
