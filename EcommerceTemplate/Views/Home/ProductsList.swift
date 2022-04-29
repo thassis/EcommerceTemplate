@@ -17,9 +17,9 @@ struct ProductsList: View {
     var body: some View {
         VStack(alignment: .leading){
             HStack{
-                TextMedium("New Product", bold: true, textColor: Color("Black"))
+                TextStyle("New Product", type: .medium, bold: true, textColor: Color("Black"))
                 Spacer()
-                TextSmall("See All", bold: true)
+                TextStyle("See All", type: .small, bold: true)
                     .padding(.horizontal, 24)
                     .padding(.vertical, 4)
                     .background(

@@ -12,10 +12,10 @@ struct Login: View {
         ZStack {
             Color("Primary").ignoresSafeArea()
             VStack{
-                TextLarge("Welcome to Tradly")
+                TextStyle("Welcome to Tradly", type: .large)
                     .padding([.bottom], 64)
                 
-                TextMedium("Login to your account")
+                TextStyle("Login to your account", type: .medium)
                     .padding([.bottom], 44)
                 
                 TextInput(placeholder: "Email/Mobile Number").padding(.bottom, 8)
@@ -29,13 +29,13 @@ struct Login: View {
                 Button {
                     print("press forgot your password")
                 } label: {
-                    TextMedium("Forgot your password?").padding(.bottom, 48)
+                    TextStyle("Forgot your password?", type: .medium).padding(.bottom, 48)
                 }
                 
                 NavigationLink(destination: SignUp()) {
                     HStack(spacing: 0) {
-                        TextMedium("Don't you have an account?")
-                        TextMedium(" Sign up", bold: true)
+                        TextStyle("Don't you have an account?", type: .medium)
+                        TextStyle(" Sign up", type: .medium, bold: true)
                     }
                 }
             }

@@ -30,7 +30,7 @@ struct Category: View {
             Image(name)
                 .resizable()
                 .aspectRatio(1, contentMode: .fit)
-            TextSmall(name)
+            TextStyle(name, type: .small)
         }
     }
 }

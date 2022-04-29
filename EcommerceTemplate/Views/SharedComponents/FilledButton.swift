@@ -17,7 +17,7 @@ struct FilledButton: View {
     }
     
     var body: some View {
-        TextMedium(title, bold: true, textColor: buttonStyle.textColor)
+        TextStyle(title, type: .medium, bold: true, textColor: buttonStyle.textColor)
             .padding(.vertical, 16)
             .padding(.horizontal, 32)
             .frame(minWidth: 0, maxWidth: .infinity)

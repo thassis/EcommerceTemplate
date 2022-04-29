@@ -27,18 +27,18 @@ struct CardProduct: View {
             .frame(width: UIScreen.screenWidth*0.4, height: UIScreen.screenHeight*0.15)
             
             VStack(alignment: .leading, spacing: 0){
-                TextSmall(product.name, bold: true, textColor: Color("Black")).padding(12)
+                TextStyle(product.name, type: .small, bold: true, textColor: Color("Black")).padding(12)
                 HStack(spacing: 0){
-                    TextSmall("T")
+                    TextStyle("T", type: .small)
                         .padding(5)
                         .background(
                             Circle().foregroundColor(Color("Primary"))
                         )
                         .padding(.leading, 12)
                         .padding(.trailing, 4)
-                    TextSmall("Tradly", textColor: Color("Grey"))
+                    TextStyle("Tradly", type: .small, textColor: Color("Grey"))
                     Spacer()
-                    TextSmall("$ \(product.price)", textColor: Color("Primary"))
+                    TextStyle("$ \(product.price)", type: .small, textColor: Color("Primary"))
                         .padding(.trailing, 12)
                 }
                 .padding(.bottom, 12)

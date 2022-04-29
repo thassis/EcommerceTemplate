@@ -14,7 +14,7 @@ struct Header: View {
     var body: some View {
         VStack{
             HStack(spacing: 0) {
-                TextLarge(title).padding(.top)
+                TextStyle(title, type: .large).padding(.top)
                 Spacer()
                 Image("cart").padding(.trailing, 18)
                 Image("heart")

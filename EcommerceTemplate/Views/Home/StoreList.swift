@@ -12,9 +12,9 @@ struct StoreList: View {
         VStack{
             VStack(alignment: .leading){
                 HStack{
-                    TextMedium("Store to Follow", bold: true)
+                    TextStyle("Store to Follow", type: .medium, bold: true)
                     Spacer()
-                    TextSmall("View All", bold: true, textColor: Color("Primary"))
+                    TextStyle("View All", type: .small, bold: true, textColor: Color("Primary"))
                         .padding(.horizontal, 24)
                         .padding(.vertical, 4)
                         .background(

@@ -13,7 +13,7 @@ struct CardStore: View {
                 Image("breads")
                     .resizable()
                     .frame(width: UIScreen.screenWidth*0.4, height: UIScreen.screenHeight*0.1)
-                TextLarge("T")
+            TextStyle("T", type: .large)
                     .padding(16)
                     .background(
                         Circle()
@@ -23,10 +23,10 @@ struct CardStore: View {
                     .offset(y: -32)
                     .padding(.bottom, -32)
 
-            TextSmall("Tradly Store", bold: true, textColor: Color("Black"))
+            TextStyle("Tradly Store", type: .small, bold: true, textColor: Color("Black"))
                 .padding([.bottom, .horizontal], 16)
             
-            TextSmall("Follow", bold: true)
+            TextStyle("Follow", type: .small, bold: true)
                 .padding(.horizontal, 24)
                 .padding(.vertical, 4)
                 .background(

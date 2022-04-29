@@ -12,10 +12,10 @@ struct SignUp: View {
         ZStack {
             Color("Primary").ignoresSafeArea()
             VStack{
-                TextLarge("Welcome to Tradly")
+                TextStyle("Welcome to Tradly", type: .large)
                     .padding(.bottom, 64)
                 
-                TextMedium("Sign up to your account")
+                TextStyle("Sign up to your account", type: .medium)
                     .padding([.bottom], 44)
                 
                 TextInput(placeholder: "First Name").padding(.bottom, 8)
@@ -31,8 +31,8 @@ struct SignUp: View {
                                 
                 NavigationLink(destination: Login()) {
                     HStack(spacing: 0) {
-                        TextMedium("Have an account?")
-                        TextMedium(" Sign in", bold: true)
+                        TextStyle("Have an account?", type: .medium)
+                        TextStyle(" Sign in", type: .medium, bold:  true)
                     }
                 }
             }

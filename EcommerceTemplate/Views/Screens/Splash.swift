@@ -18,7 +18,7 @@ struct Splash: View {
                 
                 NavigationLink(destination: Login()) {
                     HStack(spacing: 0) {
-                        TextLarge("Tradly")
+                        TextStyle("Tradly", type: .large)
                     }
                 }
             }
