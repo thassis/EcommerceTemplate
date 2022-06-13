@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct ProductInfo: Identifiable {
-    let id = UUID()
+struct ProductInfo: Identifiable, Codable {
+    var id = UUID()
     let name: String
     let price: Float
     let discountPrice: Float

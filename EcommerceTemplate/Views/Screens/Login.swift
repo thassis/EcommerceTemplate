@@ -40,9 +40,6 @@ struct Login: View {
                 }
             }
         }
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
     }
 }
 

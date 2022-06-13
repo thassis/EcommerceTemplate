@@ -8,24 +8,28 @@
 import SwiftUI
 
 struct Splash: View {
+    @State var goToTabViews = false
+    
     var body: some View {
-        ZStack {
-            Color("Primary").ignoresSafeArea()
-            VStack{
-                Image("SplashImage")
-                    .resizable()
-                    .frame(width: 126, height: 126)
-                
-                NavigationLink(destination: Login()) {
-                    HStack(spacing: 0) {
+        if(!goToTabViews){
+            ZStack {
+                Color("Primary").ignoresSafeArea()
+                VStack{
+                    Image("SplashImage")
+                        .resizable()
+                        .frame(width: 126, height: 126)
+                    
+                    Button(action: {
+                        goToTabViews = true
+                    }) {
                         TextStyle("Tradly", type: .large)
                     }
                 }
             }
+        } else {
+            TabViews()
         }
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
+        
     }
 }
 

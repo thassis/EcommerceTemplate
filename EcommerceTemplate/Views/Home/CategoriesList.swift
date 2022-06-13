@@ -16,8 +16,8 @@ struct CategoriesList: View {
         
     var body: some View {
         LazyVGrid(columns: fourColumnGrid, spacing: 1) {
-            ForEach(categories.indices) {cat in
-                Category(name: self.categories[cat])
+            ForEach(categories.indices, id: \.self) {index in
+                Category(name: self.categories[index])
             }
         }
     }

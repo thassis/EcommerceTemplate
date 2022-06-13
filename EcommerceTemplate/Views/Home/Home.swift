@@ -40,7 +40,7 @@ struct Home: View {
                 }
             }.background(Color("background"))
             Spacer()
-        }   
+        }
     }
 }
 
