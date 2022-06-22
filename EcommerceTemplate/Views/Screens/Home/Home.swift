@@ -13,10 +13,15 @@ struct Home: View {
     init(){
         productsViewModel = ProductsViewModel()
         productsViewModel.getNewProducts()
+        productsViewModel.getPopularProducts()
     }
     
-    var productsList: Array<ProductInfo> {
-        productsViewModel.products.list
+    var newProductsList: Array<ProductInfo> {
+        productsViewModel.newProducts.list
+    }
+    
+    var popularProductsList: Array<ProductInfo> {
+        productsViewModel.popularProducts.list
     }
     
     var body: some View {
@@ -31,9 +36,9 @@ struct Home: View {
                     CategoriesList()
                         .padding()
                     
-                    ProductsList(productsList)
+                    ProductsList(newProductsList)
                         .padding(16)
-                    ProductsList(productsList)
+                    ProductsList(popularProductsList)
                         .padding(16)
                     
                     StoreList().padding(.top, 16)

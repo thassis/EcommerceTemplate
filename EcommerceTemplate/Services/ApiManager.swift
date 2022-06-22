@@ -8,22 +8,24 @@
 import Foundation
 import SwiftyJSON
 
-enum BaseUrls: String {
-    case v1 = "https://apisconstants.herokuapp.com"
-    case v2 = "https://apisconstants.herokuapp.com/v2"
-}
-
 struct ApiManager {
     
-    private let getProductsUrl = BaseUrls.v1.rawValue
-    private let getNewProductsUrl = "\(BaseUrls.v1.rawValue)/newProducts/"
-    private let getNewCategoriesUrl = "\(BaseUrls.v1.rawValue)/categories/"
-    private let getPopularProductsUrl = "\(BaseUrls.v1.rawValue)/popularProducts/"
-    private let getStoresUrl = "\(BaseUrls.v1.rawValue)/stores/"
-    private let postSearchUrl = "\(BaseUrls.v1.rawValue)/search/"
-    private let postBuyUrl = "\(BaseUrls.v1.rawValue)/buy/"
+    private struct BaseUrls {
+        static let v1 = "https://apisconstants.herokuapp.com"
+        static let v2 = "https://apisconstants.herokuapp.com/v2"
+    }
     
-    func fetchRequest(
+    private static let BaseUrl = BaseUrls.v1
+    
+    static let getProductsUrl = BaseUrl
+    static let getNewProductsUrl = "\(BaseUrl)/newProducts/"
+    static let getNewCategoriesUrl = "\(BaseUrl)/categories/"
+    static let getPopularProductsUrl = "\(BaseUrl)/popularProducts/"
+    static let getStoresUrl = "\(BaseUrl)/stores/"
+    static let postSearchUrl = "\(BaseUrl)/search/"
+    static let postBuyUrl = "\(BaseUrl)/buy/"
+        
+    static func fetchRequest(
         url: String,
         completionHandler: @escaping (JSON?, Error?) -> Void,
         httpMethod: String = "GET",
@@ -54,82 +56,5 @@ struct ApiManager {
             }
         }
         task.resume()
-    }
-    
-    func getNewProducts(_ completionHandler: @escaping (JSON?, Error?) -> Void) {
-        //Change the url according to given params before call GET Request
-        fetchRequest(url: getProductsUrl, completionHandler: { requests, error in
-            if let requests = requests {
-                completionHandler(requests, nil)
-            } else if let error = error {
-                completionHandler(nil, error)
-            }
-        })
-    }
-    
-    func getNewCategories(_ completionHandler: @escaping (JSON?, Error?) -> Void) {
-        fetchRequest(url: getNewCategoriesUrl, completionHandler: { requests, error in
-            if let requests = requests {
-                completionHandler(requests, nil)
-            } else if let error = error {
-                completionHandler(nil, error)
-            }
-        })
-    }
-    
-    func getPopularProducts(_ completionHandler: @escaping (JSON?, Error?) -> Void) {
-        fetchRequest(url: getPopularProductsUrl, completionHandler: { requests, error in
-            if let requests = requests {
-                completionHandler(requests, nil)
-            } else if let error = error {
-                completionHandler(nil, error)
-            }
-        })
-    }
-    
-    func getStores(_ completionHandler: @escaping (JSON?, Error?) -> Void) {
-        fetchRequest(url: getStoresUrl, completionHandler: { requests, error in
-            if let requests = requests {
-                completionHandler(requests, nil)
-            } else if let error = error {
-                completionHandler(nil, error)
-            }
-        })
-    }
-    
-    func postSearch(search: String, _ completionHandler: @escaping (JSON?, Error?) -> Void) {
-        fetchRequest(
-            url: postSearchUrl,
-            completionHandler: { requests, error in
-                if let requests = requests {
-                    completionHandler(requests, nil)
-                } else if let error = error {
-                    completionHandler(nil, error)
-                }
-            },
-            httpMethod: "POST",
-            body: search.data(using: String.Encoding.utf8)
-        )
-    }
-    
-    func postBuyUrl(products: Array<ProductInfo>, _ completionHandler: @escaping (JSON?, Error?) -> Void) {
-        do{
-            let jsonData = try JSONEncoder().encode(products)
-            fetchRequest(
-                url: postBuyUrl,
-                completionHandler: { requests, error in
-                    if let requests = requests {
-                        completionHandler(requests, nil)
-                    } else if let error = error {
-                        completionHandler(nil, error)
-                    }
-                },
-                httpMethod: "POST",
-                body: jsonData
-            )
-        } catch {
-            print("error")
-        }
-        
     }
 }

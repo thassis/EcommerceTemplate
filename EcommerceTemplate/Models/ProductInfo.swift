@@ -1,8 +1,8 @@
 //
-//  Product.swift
+//  ProductInfo.swift
 //  EcommerceTemplate
 //
-//  Created by Thiago Assis on 28/02/22.
+//  Created by Thiago Assis on 22/06/22.
 //
 
 import Foundation
