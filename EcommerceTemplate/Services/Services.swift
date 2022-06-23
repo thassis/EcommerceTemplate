@@ -9,10 +9,21 @@ import Foundation
 import SwiftyJSON
 
 struct Services {
-//    private let apiManager = new ApiManager()
     func getNewProducts(_ completionHandler: @escaping (JSON?, Error?) -> Void) {
         //Change the url according to given params before call GET Request
-        ApiManager.fetchRequest(url: ApiManager.getProductsUrl, completionHandler: { requests, error in
+        ApiManager.fetchRequest(url: ApiManager.getNewProductsUrl, completionHandler: { requests, error in
+            if let requests = requests {
+                completionHandler(requests, nil)
+            } else if let error = error {
+                completionHandler(nil, error)
+            }
+        })
+    }
+    
+    func getProductDetails(id: Int, _ completionHandler: @escaping (JSON?, Error?) -> Void) {
+        let url = ApiManager.getProductDetails.replacingOccurrences(of: "{id}", with: String(id))
+        print(url)
+        ApiManager.fetchRequest(url: url, completionHandler: { requests, error in
             if let requests = requests {
                 completionHandler(requests, nil)
             } else if let error = error {
@@ -86,5 +97,5 @@ struct Services {
         }
         
     }
-
+    
 }

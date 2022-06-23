@@ -11,7 +11,7 @@ import SwiftUI
 struct EcommerceTemplateApp: App {
     var body: some Scene {
         WindowGroup {
-            Splash()
+            ContentView()
         }
     }
 }

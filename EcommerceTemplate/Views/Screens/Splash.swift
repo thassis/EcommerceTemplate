@@ -28,8 +28,7 @@ struct Splash: View {
             }
         } else {
             TabViews()
-        }
-        
+        }        
     }
 }
 

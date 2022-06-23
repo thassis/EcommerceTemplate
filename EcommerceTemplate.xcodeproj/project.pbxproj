@@ -11,6 +11,9 @@
 		644E9A3828189162007CB42C /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644E9A3728189162007CB42C /* ApiManager.swift */; };
 		64626A292863A3BE000A2E75 /* ProductInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64626A282863A3BE000A2E75 /* ProductInfo.swift */; };
 		64626A2C2863A549000A2E75 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64626A2B2863A549000A2E75 /* Products.swift */; };
+		64626A2E2863A7BA000A2E75 /* ProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64626A2D2863A7BA000A2E75 /* ProductDetails.swift */; };
+		64626A342863F2DE000A2E75 /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64626A322863F2DE000A2E75 /* Montserrat.ttf */; };
+		64626A352863F2DE000A2E75 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64626A332863F2DE000A2E75 /* Montserrat-Bold.ttf */; };
 		646CA8D227CE56480056C6FE /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CA8D127CE56480056C6FE /* ProductsViewModel.swift */; };
 		646CA8D527CE60230056C6FE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 646CA8D427CE60230056C6FE /* Alamofire */; };
 		646CA8D827CE635B0056C6FE /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 646CA8D727CE635B0056C6FE /* SwiftyJSON */; };
@@ -42,6 +45,9 @@
 		644E9A3728189162007CB42C /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		64626A282863A3BE000A2E75 /* ProductInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductInfo.swift; path = EcommerceTemplate/Models/ProductInfo.swift; sourceTree = SOURCE_ROOT; };
 		64626A2B2863A549000A2E75 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		64626A2D2863A7BA000A2E75 /* ProductDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetails.swift; sourceTree = "<group>"; };
+		64626A322863F2DE000A2E75 /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
+		64626A332863F2DE000A2E75 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		646CA8D127CE56480056C6FE /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
 		64753284281B6ADD0050C2F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6480BAC527CD754600BBC407 /* ProductsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsList.swift; sourceTree = "<group>"; };
@@ -93,6 +99,7 @@
 		64626A272863A318000A2E75 /* ProductDetails */ = {
 			isa = PBXGroup;
 			children = (
+				64626A2D2863A7BA000A2E75 /* ProductDetails.swift */,
 			);
 			path = ProductDetails;
 			sourceTree = "<group>";
@@ -104,6 +111,15 @@
 				64626A2B2863A549000A2E75 /* Products.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		64626A2F2863F25A000A2E75 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				64626A332863F2DE000A2E75 /* Montserrat-Bold.ttf */,
+				64626A322863F2DE000A2E75 /* Montserrat.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		646CA8D027CE54780056C6FE /* ViewModels */ = {
@@ -170,6 +186,7 @@
 		9C71DEC527BDA73600DA847B /* EcommerceTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				64626A2F2863F25A000A2E75 /* Fonts */,
 				64626A2A2863A519000A2E75 /* Models */,
 				64753283281B6ACB0050C2F5 /* Utils */,
 				644E9A39281891F7007CB42C /* Services */,
@@ -294,8 +311,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64626A352863F2DE000A2E75 /* Montserrat-Bold.ttf in Resources */,
 				9C71DECE27BDA73700DA847B /* Preview Assets.xcassets in Resources */,
 				9C71DECB27BDA73700DA847B /* Assets.xcassets in Resources */,
+				64626A342863F2DE000A2E75 /* Montserrat.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +347,7 @@
 				9C32E6A727BF16D200BED552 /* SignUp.swift in Sources */,
 				9C38128027C9782C0046DBF7 /* TabViews.swift in Sources */,
 				642E2721286256FB00C68A66 /* Services.swift in Sources */,
+				64626A2E2863A7BA000A2E75 /* ProductDetails.swift in Sources */,
 				64753285281B6ADD0050C2F5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

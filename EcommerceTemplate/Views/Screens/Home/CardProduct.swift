@@ -16,48 +16,50 @@ struct CardProduct: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0){
-            AsyncImage(url: URL(string: product.imageURL)) { image in
-                image
-                    .resizable()
-                    .frame(width: UIScreen.screenWidth*0.4, height: UIScreen.screenHeight*0.15)
-            } placeholder: {
-                Color.gray
-            }
-            .frame(width: UIScreen.screenWidth*0.4, height: UIScreen.screenHeight*0.15)
-            
+        NavigationLink(destination: ProductDetails(id: product.productId, name: product.name)) {
             VStack(alignment: .leading, spacing: 0){
-                TextStyle(product.name, type: .small, bold: true, textColor: Color("Black")).padding(12)
-                HStack(spacing: 0){
-                    TextStyle("T", type: .small)
-                        .padding(5)
-                        .background(
-                            Circle().foregroundColor(Color("Primary"))
-                        )
-                        .padding(.leading, 12)
-                        .padding(.trailing, 4)
-                    TextStyle("Tradly", type: .small, textColor: Color("Grey"))
-                    Spacer()
-                    TextStyle("$ \(product.price)", type: .small, textColor: Color("Primary"))
-                        .padding(.trailing, 12)
+                AsyncImage(url: URL(string: product.imageURL)) { image in
+                    image
+                        .resizable()
+                        .frame(width: UIScreen.screenWidth*0.4, height: UIScreen.screenHeight*0.15)
+                } placeholder: {
+                    Color.gray
                 }
-                .padding(.bottom, 12)
+                .frame(width: UIScreen.screenWidth*0.4, height: UIScreen.screenHeight*0.15)
+                
+                VStack(alignment: .leading, spacing: 0){
+                    TextStyle(product.name, type: .small, bold: true, textColor: Color("Black")).padding(12)
+                    HStack(spacing: 0){
+                        TextStyle("T", type: .small)
+                            .padding(5)
+                            .background(
+                                Circle().foregroundColor(Color("Primary"))
+                            )
+                            .padding(.leading, 12)
+                            .padding(.trailing, 4)
+                        TextStyle("Tradly", type: .small, textColor: Color("Grey"))
+                        Spacer()
+                        TextStyle("$ \(product.price)", type: .small, textColor: Color("Primary"))
+                            .padding(.trailing, 12)
+                    }
+                    .padding(.bottom, 12)
+                }
+                .overlay(
+                    RoundedRectangle(cornerRadius: 0)
+                        .stroke(Color("BorderColor"), lineWidth: 0.5)
+                )
             }
-            .overlay(
-                RoundedRectangle(cornerRadius: 0)
-                    .stroke(Color("BorderColor"), lineWidth: 0.5)
-            )
+            .background(Color.white)
+            .cornerRadius(8)
+            .frame(width: UIScreen.screenWidth*0.4)
         }
-        .background(Color.white)
-        .cornerRadius(8)
-        .frame(width: UIScreen.screenWidth*0.4)
     }
 }
 
 struct CardProduct_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            CardProduct(ProductInfo(name: "teste", price: 15, discountPrice: 5, description: "teste", imageURL: ""))
+            CardProduct(ProductInfo(productId: 0, name: "teste", price: 15, discountPrice: 5, description: "teste", imageURL: ""))
         }
     }
 }

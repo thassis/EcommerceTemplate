@@ -27,11 +27,19 @@ struct ProductsList: View {
                             .foregroundColor(Color("Primary"))
                     )
             }
-            ScrollView(.horizontal){
-                HStack(spacing: 10) {
-                    ForEach(productList) { product in
-                        CardProduct(product)
+            if(self.productList.count > 0){
+                ScrollView(.horizontal){
+                    HStack(spacing: 10) {
+                        ForEach(productList) { product in
+                            CardProduct(product)
+                        }
                     }
+                }
+            } else {
+                HStack(spacing: 10) {
+                    Spacer()
+                    ProgressView()
+                    Spacer()
                 }
             }
         }
@@ -42,7 +50,11 @@ struct ProductsList_Previews: PreviewProvider {
     static var previews: some View {
         ZStack{
             Color("background")
-            ProductsList([ProductInfo(name: "teste", price: 15, discountPrice: 5, description: "teste", imageURL: "")])
+            VStack{
+                ProductsList([ProductInfo(productId: 0, name: "teste", price: 15, discountPrice: 5, description: "teste", imageURL: "")])
+                ProductsList([])
+                
+            }
         }
     }
 }

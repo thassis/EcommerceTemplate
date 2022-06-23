@@ -7,19 +7,35 @@
 
 import SwiftUI
 
-struct Header: View {
+struct Header<TargetView: View>: View {
     let title: String
-    let showGoBack = true
+    let showGoBack: Bool
+    let goBackTo: TargetView?
+    
+    init(title: String, showGoBack: Bool = false, goBackTo: TargetView = TargetView.self as! TargetView){
+        self.title = title
+        self.showGoBack = showGoBack
+        self.goBackTo = goBackTo
+    }
     
     var body: some View {
         VStack{
-            HStack(spacing: 0) {
-                TextStyle(title, type: .large).padding(.top)
+            HStack(alignment: .center, spacing: 0) {
+                if(showGoBack){
+                    NavigationLink(destination: goBackTo){
+                        Image("Back")
+                    }
+                    Spacer()
+                }
+                TextStyle(title, type: .large)
                 Spacer()
-                Image("cart").padding(.trailing, 18)
-                Image("heart")
+                if(!showGoBack){
+                    Image("cart").padding(.trailing, 18)
+                    Image("heart")
+                }
             }
             .padding(.horizontal, 16)
+            .padding(.top)
         }
         .padding(.bottom, 24)
         .frame(maxWidth: .infinity)
@@ -30,7 +46,7 @@ struct Header: View {
 struct Header_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            Header(title: "title")
+            Header<Home>(title: "title", showGoBack: true)
             Spacer()
         }
     }

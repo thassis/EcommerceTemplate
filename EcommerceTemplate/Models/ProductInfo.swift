@@ -9,6 +9,7 @@ import Foundation
 
 struct ProductInfo: Identifiable, Codable {
     var id = UUID()
+    var productId: Int
     let name: String
     let price: Float
     let discountPrice: Float

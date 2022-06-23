@@ -12,6 +12,7 @@ import SwiftyJSON
 class ProductsViewModel: ObservableObject {
     @Published private(set) var newProducts = Products()
     @Published private(set) var popularProducts = Products()
+    @Published private(set) var productDetail: ProductInfo?
     
     private var services = Services()
     
@@ -21,6 +22,7 @@ class ProductsViewModel: ObservableObject {
             for i in 0..<arrayCount {
                 let product = responseJson[i]
                 let productInfo = ProductInfo(
+                    productId: product["id"].int ?? 0,
                     name: product["name"].string ?? "",
                     price: product["price"].float ?? 0,
                     discountPrice: product["discountPrice"].float ?? 0,
@@ -47,6 +49,21 @@ class ProductsViewModel: ObservableObject {
     func getPopularProducts() {
         services.getPopularProducts { responseJson, error in
             self.saveProductsList(responseJson, error, isNewProduct: false)
+        }
+    }
+    
+    func getProductDetails(id: Int) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.services.getProductDetails(id: id) { product, error in
+                self.productDetail = ProductInfo(
+                    productId: product?["id"].int ?? 0,
+                    name: product?["name"].string ?? "",
+                    price: product?["price"].float ?? 0,
+                    discountPrice: product?["discountPrice"].float ?? 0,
+                    description: product?["description"].string ?? "",
+                    imageURL: product?["image"].string ?? ""
+                )
+            }
         }
     }
 }

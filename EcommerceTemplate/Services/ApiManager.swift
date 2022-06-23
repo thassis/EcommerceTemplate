@@ -24,6 +24,7 @@ struct ApiManager {
     static let getStoresUrl = "\(BaseUrl)/stores/"
     static let postSearchUrl = "\(BaseUrl)/search/"
     static let postBuyUrl = "\(BaseUrl)/buy/"
+    static let getProductDetails = "\(BaseUrl)/productDetails?id={id}"
         
     static func fetchRequest(
         url: String,

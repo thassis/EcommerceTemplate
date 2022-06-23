@@ -19,29 +19,25 @@ struct TextStyle: View {
         self.bold = bold
         self.textColor = textColor
         
+        fontFamily = bold ? "Montserrat-Bold" : "Montserrat"
+        
         switch type {
         case .small:
             fontSize = 14
-            fontFamily = "Montserrat"
         case .medium:
             fontSize = 18
-            fontFamily = "Montserrat"
         case .large:
             fontSize = 24
-            fontFamily = "Montserrat-Medium"
         default:
             fontSize = 16
-            fontFamily = "Montserrat"
         }
     }
     
     
     var body: some View {
-        let textView = Text(text)
+        Text(text)
             .font(Font.custom(fontFamily, size: CGFloat(fontSize)))
             .foregroundColor(textColor)
-        if(bold){ textView.fontWeight(.bold) }
-        else { textView }
     }
 }
 
@@ -50,7 +46,7 @@ struct TextSmall_Previews: PreviewProvider {
         ZStack{
             Color("Primary").ignoresSafeArea()
             VStack{
-                TextStyle("This is bold", type: .small, bold: true)
+                TextStyle("This is bold", type: .large, bold: true)
                 TextStyle("This is not bold", type: .large, bold: false)
             }
         }
