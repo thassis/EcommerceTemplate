@@ -7,22 +7,23 @@
 
 import SwiftUI
 
-struct Header<TargetView: View>: View {
+struct Header: View {
     let title: String
     let showGoBack: Bool
-    let goBackTo: TargetView?
+    @State var paddingBottom: CGFloat
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
-    init(title: String, showGoBack: Bool = false, goBackTo: TargetView = TargetView.self as! TargetView){
+    init(title: String, showGoBack: Bool = false) {
         self.title = title
         self.showGoBack = showGoBack
-        self.goBackTo = goBackTo
+        _paddingBottom = State(initialValue: title.isEmpty ? 8 : 24)
     }
     
     var body: some View {
         VStack{
             HStack(alignment: .center, spacing: 0) {
                 if(showGoBack){
-                    NavigationLink(destination: goBackTo){
+                    Button(action: { self.mode.wrappedValue.dismiss() }) {
                         Image("Back")
                     }
                     Spacer()
@@ -37,7 +38,7 @@ struct Header<TargetView: View>: View {
             .padding(.horizontal, 16)
             .padding(.top)
         }
-        .padding(.bottom, 24)
+        .padding(.bottom, self.paddingBottom)
         .frame(maxWidth: .infinity)
         .background(Color("Primary"))
     }
@@ -46,7 +47,7 @@ struct Header<TargetView: View>: View {
 struct Header_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            Header<Home>(title: "title", showGoBack: true)
+            Header(title: "title", showGoBack: true)
             Spacer()
         }
     }

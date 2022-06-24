@@ -9,37 +9,49 @@ import SwiftUI
 
 struct TabViews: View {
     var body: some View {
-        
-        NavigationView {
+        NavigationView{
             TabView {
-                
-                Home()                
+                Home()
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                    .navigationBarBackButtonHidden(true)
                     .tabItem {
                         Image(systemName: "house.fill")
                         Text("Home")
                     }
                 Text("Browse")
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                    .navigationBarBackButtonHidden(true)
                     .tabItem {
                         Image(systemName: "magnifyingglass")
                         Text("Browse")
                     }
                 Text("Store")
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                    .navigationBarBackButtonHidden(true)
                     .tabItem {
                         Image(systemName: "bag.fill")
                         Text("Store")
                     }
                 Text("History")
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                    .navigationBarBackButtonHidden(true)
                     .tabItem {
                         Image(systemName: "list.bullet.rectangle.portrait.fill")
                         Text("Order History")
                     }
                 Text("Profile")
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                    .navigationBarBackButtonHidden(true)
                     .tabItem {
                         Image(systemName: "person.fill")
                         Text("Profile")
                     }
             }
-            
             .accentColor(Color("Primary"))
         }
     }

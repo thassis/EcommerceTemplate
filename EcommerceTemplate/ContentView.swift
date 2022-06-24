@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabViews()
+//        TabViews()
         
-//        NavigationView {
-//            Splash()
-//                .navigationBarTitle("")
-//                .navigationBarHidden(true)
-//                .navigationBarBackButtonHidden(true)
-//        }
+        NavigationView {
+            Splash()
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
+        }
     }
 }
 

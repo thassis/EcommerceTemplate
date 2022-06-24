@@ -11,7 +11,7 @@ struct ProductDetails: View {
     var id: Int
     var name: String
     @ObservedObject var productsViewModel: ProductsViewModel
-    @State var isLoading = false
+    @State var isLoading = true
     
     init(id: Int, name: String){
         print("on init")
@@ -33,11 +33,13 @@ struct ProductDetails: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
-            if(isLoading){
-                ProgressView()
-            } else {
-                VStack(alignment: .leading, spacing: 0){
-                    Header<Home>(title: "", showGoBack: true, goBackTo: Home())
+            
+            VStack(alignment: .leading, spacing: 0){
+                Header(title: "", showGoBack: true)
+                if(isLoading){
+                    ProgressView()
+                        .frame(width: UIScreen.screenWidth, height: 226)
+                } else {
                     AsyncImage(url: URL(string: productDetail.imageURL)) { image in
                         image
                             .resizable()
@@ -47,33 +49,55 @@ struct ProductDetails: View {
                         ProgressView()
                             .frame(width: UIScreen.screenWidth, height: 226)
                     }
-                    .padding(.top)
-                    
-                    TextStyle(
-                        self.name,
-                        type: .medium,
-                        bold: true,
-                        textColor: Color("Black")
-                    ).padding()
-                    
+                    .padding(.top, 8)
+                }
+                
+                
+                TextStyle(
+                    self.name,
+                    type: .medium,
+                    bold: true,
+                    textColor: Color("Black")
+                ).padding()
+                
+                if(isLoading){
+                    EmptyView()
+                        .padding(.horizontal)
+                } else {
                     HStack(alignment: .top, spacing: 0){
                         TextStyle("$ \(productDetail.price)", type: .small, bold: true, textColor: Color("Primary"))
                     }
                     .padding(.horizontal)
-                    Spacer()
                 }
-                Color("background").frame(height: 8)
-                ScrollView {
-                    TextStyle(
-                        productDetail.description,
-                        type: .medium,
-                        bold: true,
-                        textColor: Color("Black")
-                    )
-                    .padding()
-                }                
                 Spacer()
             }
+            Color("background").frame(height: 8)
+            ZStack(alignment: .bottom){
+                VStack{
+                    if(isLoading){
+                        Spacer()
+                        ProgressView().padding()
+                    } else {
+                        ScrollView {
+                            
+                            TextStyle(
+                                productDetail.description,
+                                type: .medium,
+                                textColor: Color("Black")
+                            )
+                            .padding()
+                        }
+                    }
+                    Spacer()
+                }
+                HStack{
+                    FilledButton("Add To Cart")
+                        .padding(.top)
+                }
+                .background(Color.white)
+                .shadow(color: .black, radius: 1/3)
+            }
+            
         }
         .onAppear {
             print("on apperar pdp")

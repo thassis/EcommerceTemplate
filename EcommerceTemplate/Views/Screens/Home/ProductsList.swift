@@ -27,21 +27,35 @@ struct ProductsList: View {
                             .foregroundColor(Color("Primary"))
                     )
             }
-            if(self.productList.count > 0){
-                ScrollView(.horizontal){
-                    HStack(spacing: 10) {
+            //            if(self.productList.count > 0){
+            ScrollView(.horizontal){
+                HStack(spacing: 10) {
+                    if(self.productList.count > 0){
                         ForEach(productList) { product in
-                            CardProduct(product)
+                            NavigationLink(
+                                destination: ProductDetails(
+                                    id: product.productId,
+                                    name: product.name
+                                )
+                            ) {
+                                CardProduct(product)
+                            }
                         }
+                    } else {
+                        VStack {                            
+                            ProgressView()
+                        }
+                        .frame(width: UIScreen.screenWidth)
                     }
                 }
-            } else {
-                HStack(spacing: 10) {
-                    Spacer()
-                    ProgressView()
-                    Spacer()
-                }
             }
+            //            } else {
+            //                HStack(spacing: 10) {
+            //                    Spacer()
+            //                    ProgressView()
+            //                    Spacer()
+            //                }
+            //            }
         }
     }
 }

@@ -53,7 +53,7 @@ class ProductsViewModel: ObservableObject {
     }
     
     func getProductDetails(id: Int) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { //This is just for simulating a loading on View
             self.services.getProductDetails(id: id) { product, error in
                 self.productDetail = ProductInfo(
                     productId: product?["id"].int ?? 0,

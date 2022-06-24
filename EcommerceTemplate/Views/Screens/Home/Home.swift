@@ -26,7 +26,7 @@ struct Home: View {
     
     var body: some View {
         VStack(spacing: 0){
-            Header<SignUp>(title: "Groceries", goBackTo: SignUp())
+            Header(title: "Groceries")
             SearchBar()
                 .padding(.bottom, 16)
                 .background(Color("Primary"))
@@ -45,10 +45,7 @@ struct Home: View {
                 }
             }.background(Color("background"))
             Spacer()
-        }
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
+        }        
     }
 }
 
