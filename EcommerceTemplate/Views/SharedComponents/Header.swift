@@ -21,19 +21,16 @@ struct Header: View {
     
     var body: some View {
         VStack{
-            HStack(alignment: .center, spacing: 0) {
+            ZStack(alignment: .leading) {
                 if(showGoBack){
                     Button(action: { self.mode.wrappedValue.dismiss() }) {
                         Image("Back")
                     }
-                    Spacer()
                 }
+                
                 TextStyle(title, type: .large)
-                Spacer()
-                if(!showGoBack){
-                    Image("cart").padding(.trailing, 18)
-                    Image("heart")
-                }
+                    .frame(maxWidth: .infinity)
+                
             }
             .padding(.horizontal, 16)
             .padding(.top)

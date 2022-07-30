@@ -11,10 +11,11 @@ struct ProductDetails: View {
     var id: Int
     var name: String
     @ObservedObject var productsViewModel: ProductsViewModel
-    @State var isLoading = true
+    @EnvironmentObject var cart: ProductsCartViewModel
+    @State private var isLoading = true
+    @State private var goToCart: Int? = 0
     
     init(id: Int, name: String){
-        print("on init")
         self.id = id
         self.name = name
         self.productsViewModel = ProductsViewModel()
@@ -33,7 +34,9 @@ struct ProductDetails: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
-            
+            NavigationLink(destination: Cart(), tag: 1, selection: $goToCart) {
+                EmptyView()
+            }
             VStack(alignment: .leading, spacing: 0){
                 Header(title: "", showGoBack: true)
                 if(isLoading){
@@ -44,10 +47,10 @@ struct ProductDetails: View {
                         image
                             .resizable()
                             .scaledToFit()
-                            .frame(width: UIScreen.screenWidth, height: 226)
+                            .frame(width: UIScreen.screenWidth, height: UIScreen.screenWidth * 3/4)
                     } placeholder: {
                         ProgressView()
-                            .frame(width: UIScreen.screenWidth, height: 226)
+                            .frame(width: UIScreen.screenWidth, height: UIScreen.screenWidth * 3/4)
                     }
                     .padding(.top, 8)
                 }
@@ -90,12 +93,20 @@ struct ProductDetails: View {
                     }
                     Spacer()
                 }
+                
                 HStack{
-                    FilledButton("Add To Cart")
+                    if(!isLoading){
+                        FilledButton("Add To Cart", onPress: {
+                            print("added to cart")
+                            cart.addProductToCart(productDetail)
+                            self.goToCart = 1
+                        })
                         .padding(.top)
+                    }
                 }
                 .background(Color.white)
                 .shadow(color: .black, radius: 1/3)
+                
             }
             
         }

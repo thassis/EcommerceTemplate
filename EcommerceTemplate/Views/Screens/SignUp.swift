@@ -18,17 +18,32 @@ struct SignUp: View {
                 TextStyle("Sign up to your account", type: .medium)
                     .padding([.bottom], 44)
                 
-                TextInput(placeholder: "First Name").padding(.bottom, 8)
-                TextInput(placeholder: "Last Name").padding(.bottom, 8)
-                TextInput(placeholder: "Email ID/Phone Number").padding(.bottom, 8)
-                TextInput(placeholder: "Password").padding(.bottom, 8)
-                TextInput(placeholder: "Re-enter Password").padding(.bottom, 36)
+                TextInput(placeholder: "First Name"){ text in
+                    print(text ?? "")
+                }
+                .padding(.bottom, 8)
+                TextInput(placeholder: "Last Name"){ text in
+                    print(text ?? "")
+                }
+                .padding(.bottom, 8)
+                TextInput(placeholder: "Email ID/Phone Number"){ text in
+                    print(text ?? "")
+                }
+                .padding(.bottom, 8)
+                TextInput(placeholder: "Password"){ text in
+                    print(text ?? "")
+                }
+                .padding(.bottom, 8)
+                TextInput(placeholder: "Re-enter Password"){ text in
+                    print(text ?? "")
+                }
+                .padding(.bottom, 36)
                 
                 NavigationLink(destination: TabViews()) {
-                    FilledButton("Create", buttonStyle: FilledButton.Style.white)
+                    FilledButton("Create", buttonStyle: FilledButton.Style.white, onPress: {})
                         .padding(.bottom, 32)
                 }
-                                
+                
                 NavigationLink(destination: Login()) {
                     HStack(spacing: 0) {
                         TextStyle("Have an account?", type: .medium)

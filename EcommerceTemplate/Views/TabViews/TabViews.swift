@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TabViews: View {
+    @StateObject var cart = ProductsCartViewModel()
+    
     var body: some View {
         NavigationView{
             TabView {
@@ -54,6 +56,8 @@ struct TabViews: View {
             }
             .accentColor(Color("Primary"))
         }
+        .navigationViewStyle(.stack)
+        .environmentObject(cart)
     }
 }
 

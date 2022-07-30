@@ -14,24 +14,33 @@ struct TextInput: View {
     let bgColor: Color
     let fontColor: Color
     let leftImgName: String
+    var onSubmit: (String?) -> Void
     
-    init(placeholder: String, bgColor: Color = transparentColor, fontColor: Color = Color.white, leftImgName: String = ""){
+    init(placeholder: String, bgColor: Color = transparentColor, fontColor: Color = Color.white, leftImgName: String = "", _ onSubmit: @escaping (_ text: String?) -> Void
+    ){
         self.placeholder = placeholder
         self.bgColor = bgColor
         self.fontColor = fontColor
         self.leftImgName = leftImgName
+        self.onSubmit = onSubmit
     }
     
     var body: some View {
         if(self.bgColor == transparentColor){
-            TextInputView(placeholder: placeholder, fontColor: fontColor, leftImgName: leftImgName)
+            TextInputView(placeholder: placeholder, fontColor: fontColor, leftImgName: leftImgName
+            ){ text in
+                self.onSubmit(text)
+            }
                 .overlay(
                     RoundedRectangle(cornerRadius: 24)
                         .stroke(Color.white, lineWidth: 1)
                 )
                 .padding([.horizontal], 32)
         } else {
-            TextInputView(placeholder: placeholder, fontColor: fontColor, leftImgName: leftImgName)
+            TextInputView(placeholder: placeholder, fontColor: fontColor, leftImgName: leftImgName
+            ) { text in
+                self.onSubmit(text)
+            }
                 .background(
                     RoundedRectangle(cornerRadius: 24)
                         .fill(self.bgColor)
@@ -42,10 +51,11 @@ struct TextInput: View {
 }
 
 struct TextInputView: View {
-    @State private var username: String = ""
+    @State private var textValue: String = ""
     let placeholder: String
     let fontColor: Color
     let leftImgName: String
+    var onSubmit: (String?) -> Void
     
     var body: some View {
         HStack(spacing: 0){
@@ -53,13 +63,19 @@ struct TextInputView: View {
                 Image(systemName: self.leftImgName)
                     .foregroundColor(Color("Primary"))
                     .padding(.leading, 16)
+                    .onTapGesture {
+                        self.onSubmit(textValue)
+                    }
             }
             ZStack(alignment: .leading) {
-                if username.isEmpty { Placeholder(text: placeholder, fontColor: fontColor) }
-                TextField("", text: $username)
+                if textValue.isEmpty { Placeholder(text: placeholder, fontColor: fontColor) }
+                TextField("", text: $textValue)
                     .font(Font.custom("Montserrat-Medium", size: 16))
                     .foregroundColor(fontColor)
                     .autocapitalization(.none)
+                    .onSubmit {
+                        self.onSubmit(textValue)
+                    }
             }
             .padding(12)
         }
@@ -82,8 +98,19 @@ struct TextInput_Previews: PreviewProvider {
         ZStack{
             Color("Primary").ignoresSafeArea()
             VStack{
-                TextInput(placeholder: "Email/Mobile Number")
-                TextInput(placeholder: "Email/Mobile Number", bgColor: Color.white,fontColor: Color("Black"), leftImgName: "magnifyingglass")
+                TextInput(
+                    placeholder: "Email/Mobile Number"
+                ) { text in
+                    print(text ?? "")
+                }
+                TextInput(
+                    placeholder: "Email/Mobile Number",
+                    bgColor: Color.white,
+                    fontColor: Color("Black"),
+                    leftImgName: "magnifyingglass")
+                { text in
+                    print(text ?? "")
+                }
             }
         }
     }

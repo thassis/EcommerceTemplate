@@ -18,11 +18,18 @@ struct Login: View {
                 TextStyle("Login to your account", type: .medium)
                     .padding([.bottom], 44)
                 
-                TextInput(placeholder: "Email/Mobile Number").padding(.bottom, 8)
-                TextInput(placeholder: "Password").padding(.bottom, 36)
+                TextInput(placeholder: "Email/Mobile Number"){ text in
+                    print(text ?? "")
+                }
+                .padding(.bottom, 8)
+                
+                TextInput(placeholder: "Password"){ text in
+                    print(text ?? "")
+                }
+                .padding(.bottom, 36)
                 
                 NavigationLink(destination: TabViews()) {
-                    FilledButton("Login", buttonStyle: FilledButton.Style.white)
+                    FilledButton("Login", buttonStyle: FilledButton.Style.white, onPress: {})
                         .padding(.bottom, 32)
                 }
                 

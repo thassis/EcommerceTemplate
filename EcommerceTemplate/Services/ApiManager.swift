@@ -11,7 +11,7 @@ import SwiftyJSON
 struct ApiManager {
     
     private struct BaseUrls {
-        static let v1 = "https://apisconstants.herokuapp.com"
+        static let v1 = "http://127.0.0.1:3000"
         static let v2 = "https://apisconstants.herokuapp.com/v2"
     }
     
@@ -44,8 +44,9 @@ struct ApiManager {
             request.httpBody = body
         }
         
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
+                print(data)
                 DispatchQueue.main.async {
                     let responseJson = try! JSON(data: data)
                     completionHandler(responseJson, nil)

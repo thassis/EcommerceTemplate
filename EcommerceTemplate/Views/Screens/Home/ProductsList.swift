@@ -27,7 +27,6 @@ struct ProductsList: View {
                             .foregroundColor(Color("Primary"))
                     )
             }
-            //            if(self.productList.count > 0){
             ScrollView(.horizontal){
                 HStack(spacing: 10) {
                     if(self.productList.count > 0){
@@ -49,13 +48,6 @@ struct ProductsList: View {
                     }
                 }
             }
-            //            } else {
-            //                HStack(spacing: 10) {
-            //                    Spacer()
-            //                    ProgressView()
-            //                    Spacer()
-            //                }
-            //            }
         }
     }
 }

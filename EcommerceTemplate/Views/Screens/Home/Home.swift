@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Home: View {
     @ObservedObject var productsViewModel: ProductsViewModel
+    @State var goToSearch = false
+    @State var searchValue: String?
     
     init(){
         productsViewModel = ProductsViewModel()
@@ -26,10 +28,17 @@ struct Home: View {
     
     var body: some View {
         VStack(spacing: 0){
-            Header(title: "Groceries")
-            SearchBar()
-                .padding(.bottom, 16)
-                .background(Color("Primary"))
+            SearchBar(){ text in
+                searchValue = text
+                goToSearch = true
+            }
+            .padding(.vertical, 16)
+            .background(Color("Primary"))
+            NavigationLink(
+                "",
+                destination: SearchProducts(searchValue ?? ""),
+                isActive: $goToSearch
+            )
             
             ScrollView() {
                 VStack(spacing: 0) {
@@ -45,7 +54,7 @@ struct Home: View {
                 }
             }.background(Color("background"))
             Spacer()
-        }        
+        }
     }
 }
 

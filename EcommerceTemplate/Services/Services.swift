@@ -63,6 +63,7 @@ struct Services {
     }
     
     func postSearch(search: String, _ completionHandler: @escaping (JSON?, Error?) -> Void) {
+        let stringBody = "search=" + search
         ApiManager.fetchRequest(
             url: ApiManager.postSearchUrl,
             completionHandler: { requests, error in
@@ -73,7 +74,8 @@ struct Services {
                 }
             },
             httpMethod: "POST",
-            body: search.data(using: String.Encoding.utf8)
+            body: stringBody.data(using: .utf8),
+            header: "application/x-www-form-urlencoded"
         )
     }
     
