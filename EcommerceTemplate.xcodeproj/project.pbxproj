@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6419C210290DB0AC002EFF06 /* EcommerceTemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6419C20F290DB0AC002EFF06 /* EcommerceTemplateTests.swift */; };
 		642E2721286256FB00C68A66 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642E2720286256FB00C68A66 /* Services.swift */; };
 		644E9A3828189162007CB42C /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644E9A3728189162007CB42C /* ApiManager.swift */; };
 		6460C36428948625009A5E7A /* ProductsCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6460C36328948625009A5E7A /* ProductsCart.swift */; };
@@ -45,7 +46,19 @@
 		9CEFE3E327C71C9900EFAF34 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEFE3E227C71C9900EFAF34 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6419C211290DB0AC002EFF06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C71DEBB27BDA73600DA847B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C71DEC227BDA73600DA847B;
+			remoteInfo = EcommerceTemplate;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		6419C20D290DB0AC002EFF06 /* EcommerceTemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EcommerceTemplateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6419C20F290DB0AC002EFF06 /* EcommerceTemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcommerceTemplateTests.swift; sourceTree = "<group>"; };
 		642E2720286256FB00C68A66 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		644E9A3728189162007CB42C /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		6460C36328948625009A5E7A /* ProductsCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCart.swift; sourceTree = "<group>"; };
@@ -84,6 +97,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6419C20A290DB0AC002EFF06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9C71DEC027BDA73600DA847B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -97,6 +117,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6419C20E290DB0AC002EFF06 /* EcommerceTemplateTests */ = {
+			isa = PBXGroup;
+			children = (
+				6419C20F290DB0AC002EFF06 /* EcommerceTemplateTests.swift */,
+			);
+			path = EcommerceTemplateTests;
+			sourceTree = "<group>";
+		};
 		644E9A39281891F7007CB42C /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				9C71DEC527BDA73600DA847B /* EcommerceTemplate */,
+				6419C20E290DB0AC002EFF06 /* EcommerceTemplateTests */,
 				9C71DEC427BDA73600DA847B /* Products */,
 				64CE56AC27CD586400FBE084 /* Frameworks */,
 			);
@@ -207,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				9C71DEC327BDA73600DA847B /* EcommerceTemplate.app */,
+				6419C20D290DB0AC002EFF06 /* EcommerceTemplateTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -277,6 +307,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6419C20C290DB0AC002EFF06 /* EcommerceTemplateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6419C215290DB0AC002EFF06 /* Build configuration list for PBXNativeTarget "EcommerceTemplateTests" */;
+			buildPhases = (
+				6419C209290DB0AC002EFF06 /* Sources */,
+				6419C20A290DB0AC002EFF06 /* Frameworks */,
+				6419C20B290DB0AC002EFF06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6419C212290DB0AC002EFF06 /* PBXTargetDependency */,
+			);
+			name = EcommerceTemplateTests;
+			productName = EcommerceTemplateTests;
+			productReference = 6419C20D290DB0AC002EFF06 /* EcommerceTemplateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9C71DEC227BDA73600DA847B /* EcommerceTemplate */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C71DED127BDA73700DA847B /* Build configuration list for PBXNativeTarget "EcommerceTemplate" */;
@@ -306,9 +354,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					6419C20C290DB0AC002EFF06 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 9C71DEC227BDA73600DA847B;
+					};
 					9C71DEC227BDA73600DA847B = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -333,11 +385,19 @@
 			projectRoot = "";
 			targets = (
 				9C71DEC227BDA73600DA847B /* EcommerceTemplate */,
+				6419C20C290DB0AC002EFF06 /* EcommerceTemplateTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6419C20B290DB0AC002EFF06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9C71DEC127BDA73600DA847B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -352,6 +412,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6419C209290DB0AC002EFF06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6419C210290DB0AC002EFF06 /* EcommerceTemplateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9C71DEBF27BDA73600DA847B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -390,7 +458,61 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6419C212290DB0AC002EFF06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C71DEC227BDA73600DA847B /* EcommerceTemplate */;
+			targetProxy = 6419C211290DB0AC002EFF06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		6419C213290DB0AC002EFF06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 744W89F35D;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thiago.EcommerceTemplateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EcommerceTemplate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EcommerceTemplate";
+			};
+			name = Debug;
+		};
+		6419C214290DB0AC002EFF06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 744W89F35D;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thiago.EcommerceTemplateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EcommerceTemplate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EcommerceTemplate";
+			};
+			name = Release;
+		};
 		9C71DECF27BDA73700DA847B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -570,6 +692,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6419C215290DB0AC002EFF06 /* Build configuration list for PBXNativeTarget "EcommerceTemplateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6419C213290DB0AC002EFF06 /* Debug */,
+				6419C214290DB0AC002EFF06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9C71DEBE27BDA73600DA847B /* Build configuration list for PBXProject "EcommerceTemplate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
